@@ -9,6 +9,13 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            background-color: black; /* Черный фон */
+            color: white; /* Белый цвет текста */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .loading {
             width: 100px;
@@ -34,24 +41,8 @@
 <body>
     <h1>Добро пожаловать в GEM Wallet! 💎</h1>
     <p>Кошелек находится в разработке.</p>
+
+    <!-- Анимация загрузки -->
     <div class="loading"></div>
-
-    <!-- Telegram Login Widget -->
-    <h2>Войдите через Telegram</h2>
-    <script async src="https://telegram.org/js/telegram-widget.js?22"
-            data-telegram-login="GemWaIIetBot"
-            data-size="large"
-            data-userpic="true"
-            data-request-access="write"
-            data-lang="ru"
-            data-callback="onTelegramAuth"></script>
-
-    <!-- Скрипт для обработки данных пользователя -->
-    <script>
-        function onTelegramAuth(user) {
-            console.log('Пользователь авторизован:', user);
-            alert(`Добро пожаловать, ${user.first_name}!\nВаш ID: ${user.id}`);
-        }
-    </script>
 </body>
 </html>
