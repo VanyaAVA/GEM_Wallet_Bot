@@ -24,6 +24,19 @@
             100% { transform: rotate(360deg); }
         }
     </style>
+    <!-- Telegram WebApp Script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Расширяет интерфейс на весь экран
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const userName = tg.initDataUnsafe.user?.first_name || 'Гость';
+            const message = document.createElement('p');
+            message.innerText = `Привет, ${userName}! Кошелек в разработке.`;
+            document.body.appendChild(message);
+        });
+    </script>
 </head>
 <body>
     <h1>Добро пожаловать в GEM Wallet! 💎</h1>
